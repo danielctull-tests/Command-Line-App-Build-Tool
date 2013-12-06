@@ -123,6 +123,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 243D1310185246A70042F90D /* Build configuration list for PBXNativeTarget "App" */;
 			buildPhases = (
+				243D13261852476E0042F90D /* ShellScript */,
 				243D12E0185246A70042F90D /* Sources */,
 				243D12E1185246A70042F90D /* Frameworks */,
 				243D12E2185246A70042F90D /* Resources */,
@@ -190,6 +191,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		243D13261852476E0042F90D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash ${SRCROOT}/build-parser.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		243D12E0185246A70042F90D /* Sources */ = {

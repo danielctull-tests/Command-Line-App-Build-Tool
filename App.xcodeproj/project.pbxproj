@@ -17,17 +17,15 @@
 		243D131E185246D50042F90D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 243D131D185246D50042F90D /* main.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		243D1318185246D50042F90D /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
+/* Begin PBXContainerItemProxy section */
+		24D3F7F918525A5F0026689F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 243D12DC185246A70042F90D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 243D1319185246D50042F90D;
+			remoteInfo = Parser;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		243D12E4185246A70042F90D /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +129,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				24D3F7FA18525A5F0026689F /* PBXTargetDependency */,
 			);
 			name = App;
 			productName = App;
@@ -141,9 +140,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 243D1323185246D50042F90D /* Build configuration list for PBXNativeTarget "Parser" */;
 			buildPhases = (
-				243D1316185246D50042F90D /* Sources */,
 				243D1317185246D50042F90D /* Frameworks */,
-				243D1318185246D50042F90D /* CopyFiles */,
+				243D1316185246D50042F90D /* Sources */,
+				2468703418525B5F00ADB152 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -204,7 +203,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash ${SRCROOT}/build-parser.sh";
+			shellScript = "\"${BUILD_ROOT}/Parser\"";
+		};
+		2468703418525B5F00ADB152 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${BUILD_ROOT}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -228,6 +240,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		24D3F7FA18525A5F0026689F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 243D1319185246D50042F90D /* Parser */;
+			targetProxy = 24D3F7F918525A5F0026689F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		243D130E185246A70042F90D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -246,7 +266,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -286,7 +305,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -308,6 +326,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "App/App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -320,6 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "App/App-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -373,6 +393,7 @@
 				243D1312185246A70042F90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		243D1323185246D50042F90D /* Build configuration list for PBXNativeTarget "Parser" */ = {
 			isa = XCConfigurationList;
@@ -381,6 +402,7 @@
 				243D1325185246D50042F90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
